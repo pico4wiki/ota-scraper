@@ -28,20 +28,22 @@ export default {
 					? ([
 							["phoenix", "sek"],
 							["phoenix", "seko"],
+							//["neo3", "sek"], // TODO: stuck on 5.9.5.0
+							//["neo3", "k"], // doesn't return anything
 							["merline", "sek"],
 							["sparrow", "sek"],
 						] as const)
 					: ([
-							//["phoenix", "sek"],
-							...(bc_flag === 1 ? [["phoenix", "seko"]] as const : []),
-							//['neo3', 'sek'],
-							//['neo3', 'k'],
-							["merline", "sek"],
+							["phoenix", "sek"],
+							["phoenix", "seko"],
+							["neo3", "sek"],
+							//["neo3", "k"], // just returns a duplicate
+							//["merline", "sek"], // TODO: stuck on 5.9.0
 							["sparrow", "sek"],
 						] as const);
 
 			for (const [headset, variant] of headsets) {
-				const body = otaPayload(headset, region, variant, bc_flag);
+				const body = otaPayload(headset, region, variant);
 				const sig = await getSignature(body, region);
 
 				const resp = await fetch(

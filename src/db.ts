@@ -66,10 +66,9 @@ export function mostRecentBuild(env: Env, product: Headsets, variant: Variant, r
 export function putFirmware(env: Env, product: Headsets, variant: Variant, firmware: any, region: Region) {
 	const parsed = parseFirmware(product, region, variant, firmware);
 
-	console.log(parsed.name);
 	return env.otas
 		.prepare(
-			`INSERT INTO otas (buildNo, product, region, md5, url, name, version, buildDate, variant, data) VALUES (?,?,?,?,?,?,?,?,?,?)`,
+			`INSERT OR IGNORE INTO otas (buildNo, product, region, md5, url, name, version, buildDate, variant, data) VALUES (?,?,?,?,?,?,?,?,?,?)`,
 		)
 		.bind(
 			parsed.buildNo,

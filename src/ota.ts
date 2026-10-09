@@ -18,6 +18,13 @@ export const PRODUCT_NAMES_CHINA = {
 	// PICO_G2_4K (Finch2)
 } as const;
 
+export const MODELS = {
+	sparrow: "A8150",
+	phoenix: "A8110",
+	neo3: "A7H10",
+	merline: "A7Q10",
+} as const;
+
 // for X-Signature, currently we only use sparrow
 export const SECRET_KEYS_OVERSEAS = {
 	Phoenix_ovs: "223ecf843a8ad96f99ee3f92c54e164f",
@@ -38,7 +45,7 @@ export const SECRET_KEYS_CHINA = {
 
 export type Region = "china" | "overseas";
 
-export const otaPayload = (product: Headsets, region: Region, variant: string, bc_flag: 1 | 2) =>
+export const otaPayload = (product: Headsets, region: Region, variant: string) =>
 	JSON.stringify({
 		// they do not check the x-signature access header, nor do they check any of the shite below this matches
 		// you can identify as a PICO 4 Ultra Enterprise and they'll happily throw a phoenix ota at you
@@ -47,31 +54,16 @@ export const otaPayload = (product: Headsets, region: Region, variant: string, b
 		//rom_version: "5.7.2-202308222237-RELEASE-user-phoenix-b5653",
 		udid: "PA81E0DAFH31ABC4G",
 		os_version: "5.7.2",
-		model: "A81E0",
+		model: MODELS[product],
 		language: "en",
-		flag: "0", // needsFullPackage
+		flag: "1", // needsFullPackage
 		did: "", // comes from bytedance's tracking library Tea, unsure of the format
 		country_code: "GB",
 		channel: "",
 		buildtime: "0",
 		buildtype: `user_${variant}`,
-		bc_flag,
-		apps: {
-			"com.pvr.version": 200306031,
-			"com.picovr.updatesystem": 200400017,
-			"com.picopui.im": 100004001,
-			"com.pvr.pvrfit": 100105013,
-			"com.picovr.wing.videoplayer": 200300071,
-			"com.pvr.filemanager": 100402023,
-			"com.picovr.picostreamassistant": 901407000,
-			"com.picovr.store": 300900056,
-			"com.pvr.home": 101000010,
-			"com.pvr.lanserver": 100023015,
-			"com.pvr.avatareditor": 100306002,
-			"com.picovr.vrusercenter": 200201024,
-			"com.bytedance.pico.matrix": 500501010,
-			"com.pico.xr.openxr_runtime": 200110136,
-		},
+		bc_flag: 2,
+		apps: {},
 	});
 
 export async function getSignature(reqBody: string, region: Region) {
