@@ -5,19 +5,20 @@ import { tz } from "@date-fns/tz";
 type Region = "china" | "overseas";
 
 export function initIfNeeded(env: Env) {
-	env.otas.exec(`
+	// exec only accepts single line inputs, thank you cloudfart
+	return env.otas.prepare(`
 		CREATE TABLE IF NOT EXISTS otas (
-			buildNo INTEGER PRIMARY KEY,
-			product STRING NOT NULL,
-			region STRING NOT NULL,
-			md5 STRING NOT NULL,
-			url STRING NOT NULL, -- name is the last part of this anyway generally
-			name STRING,
-			version STRING NOT NULL,
-			buildDate STRING NOT NULL,
-			data TEXT -- json lol
+			buildNo   INTEGER PRIMARY KEY,
+			product   TEXT NOT NULL,
+			region    TEXT NOT NULL,
+			md5       TEXT NOT NULL,
+			url       TEXT NOT NULL, -- name is the last part of this anyway generally
+			name      TEXT,
+			version   TEXT NOT NULL,
+			buildDate TEXT NOT NULL,
+			data      TEXT           -- json lol
 		)
-	`);
+	`).run();
 }
 
 type DbFirmware = {
@@ -73,4 +74,23 @@ export async function putFirmwareIfNew(env: Env, product: Product, firmware: any
 
 	if (!mostRecent || mostRecent.buildNo < parsed.buildNo)
 		putFirmware(env, product, firmware, region);
+}
+
+export async function getOtas(env: Env) {
+	const firmwares: Record<Product, DbFirmware[]> = {
+		Phoenix_ovs: [],
+		PICO_G3: [],
+		Pico_Neo_3: [],
+		Pico_Neo_3_Link: [],
+		sparrow: []
+	};
+
+	// fuck performance im sure its fine
+	const all = await env.otas.prepare("SELECT * FROM otas").all<DbFirmware>();
+
+	for (const product in firmwares) {
+		firmwares[product as Product] = all.results.filter(f => f.product === product);
+	}
+
+	return firmwares;
 }

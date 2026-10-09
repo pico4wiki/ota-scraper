@@ -1,15 +1,23 @@
+import { getOtas, initIfNeeded } from "./db";
 import { getSignature, otaPayload } from "./ota";
 
 export default {
 	async fetch(req, env, ctx) {
+		if (new URL(req.url).pathname === "/")
+			return new Response(JSON.stringify(await getOtas(env)), {headers: {
+				'content-type': 'application/json',
+				'cache-control': 'max-age: 86400'
+			}});
 
-
-		return new Response(`TODO`);
+		return new Response("whuh?");
 	},
 
 	// The scheduled handler is invoked at the interval set in our wrangler.jsonc's
 	// [[triggers]] configuration.
 	async scheduled(event, env, ctx): Promise<void> {
+
+		await initIfNeeded(env);
+
 
 		// having issues getting Pico_Neo_3 and Pico_Neo_3_Link to work on global (apparently it works on CN?)
 		// TODO: CN
@@ -21,6 +29,7 @@ export default {
 				method: 'POST',
 				body,
 				headers: {
+					'content-type': 'application/json',
 					'X-Signature': sig
 				}
 			}).then(r => r.json<any>());
