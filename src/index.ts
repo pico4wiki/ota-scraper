@@ -1,4 +1,4 @@
-import { getOtas, initIfNeeded } from "./db";
+import { getOtas, initIfNeeded, putFirmwareIfNew } from "./db";
 import { getSignature, otaPayload } from "./ota";
 
 export default {
@@ -41,6 +41,7 @@ export default {
 			if (!resp.data) throw new Error(`err fetching ${headset} - no data returned but no errmsg either`);
 
 			// check if its new, and if so, push to DB
+			await putFirmwareIfNew(env, headset, resp.data)
 		}
 	},
 } satisfies ExportedHandler<Env>;
