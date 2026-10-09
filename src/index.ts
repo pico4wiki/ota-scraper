@@ -7,6 +7,7 @@ export default {
 			return new Response(JSON.stringify(await getOtas(env)), {
 				headers: {
 					"content-type": "application/json",
+					"access-control-allow-origin": "https://pico4.wiki",
 					"cache-control": "max-age: 86400",
 				},
 			});
