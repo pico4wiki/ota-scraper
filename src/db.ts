@@ -94,19 +94,8 @@ export async function putFirmwareIfNew(env: Env, product: Headsets, variant: Var
 }
 
 export async function getOtas(env: Env) {
-	const firmwares: Record<Headsets, DbFirmware[]> = {
-		phoenix: [],
-		merline: [],
-		neo3: [],
-		sparrow: [],
-	};
-
 	// fuck performance im sure its fine
 	const all = await env.otas.prepare("SELECT * FROM otas").all<DbFirmware>();
 
-	for (const product in firmwares) {
-		firmwares[product as Headsets] = all.results.filter((f) => f.product === product);
-	}
-
-	return firmwares;
+	return Object.groupBy(all.results, fw => fw.product);
 }
