@@ -4,7 +4,8 @@ import { tz } from "@date-fns/tz";
 
 export function initIfNeeded(env: Env) {
 	// exec only accepts single line inputs, thank you cloudfart
-	return env.otas.prepare(`
+	return env.otas
+		.prepare(`
 		CREATE TABLE IF NOT EXISTS otas (
 			buildNo   INTEGER PRIMARY KEY,
 			product   TEXT NOT NULL,
@@ -17,7 +18,8 @@ export function initIfNeeded(env: Env) {
 			variant   TEXT NOT NULL,
 			data      TEXT           -- json lol
 		)
-	`).run();
+	`)
+		.run();
 }
 
 type DbFirmware = {
@@ -35,10 +37,10 @@ type DbFirmware = {
 
 function parseFirmware(product: Headsets, region: Region, variant: Variant, firmware: any): DbFirmware {
 	// this doesn't always match the one in the string
-	const buildDate = format(firmware.package[0].buildtime * 1000, 'yyyyMMddHHmm', { in: tz('Asia/Shanghai') });
+	const buildDate = format(firmware.package[0].buildtime * 1000, "yyyyMMddHHmm", { in: tz("Asia/Shanghai") });
 	const buildNo = parseInt(firmware.package[0].name?.match(/-b(\d+)-/)?.[1]);
 
-	if (isNaN(buildNo)) throw new Error('cannot parse firmware');
+	if (isNaN(buildNo)) throw new Error("cannot parse firmware");
 
 	return {
 		buildDate,
@@ -64,10 +66,23 @@ export function mostRecentBuild(env: Env, product: Headsets, variant: Variant, r
 export function putFirmware(env: Env, product: Headsets, variant: Variant, firmware: any, region: Region) {
 	const parsed = parseFirmware(product, region, variant, firmware);
 
-	console.log(parsed.name)
+	console.log(parsed.name);
 	return env.otas
-		.prepare(`INSERT INTO otas (buildNo, product, region, md5, url, name, version, buildDate, variant, data) VALUES (?,?,?,?,?,?,?,?,?,?)`)
-		.bind(parsed.buildNo, parsed.product, parsed.region, parsed.md5, parsed.url, parsed.name, parsed.version, parsed.buildDate, parsed.variant, parsed.data)
+		.prepare(
+			`INSERT INTO otas (buildNo, product, region, md5, url, name, version, buildDate, variant, data) VALUES (?,?,?,?,?,?,?,?,?,?)`,
+		)
+		.bind(
+			parsed.buildNo,
+			parsed.product,
+			parsed.region,
+			parsed.md5,
+			parsed.url,
+			parsed.name,
+			parsed.version,
+			parsed.buildDate,
+			parsed.variant,
+			parsed.data,
+		)
 		.run();
 }
 

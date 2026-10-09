@@ -1,0 +1,9 @@
+{
+	"lineWidth": 120,
+	"useTabs": true,
+	"indentWidth": 3,
+
+	"biome": {},
+	"excludes": ["pnpm-lock.yaml", "**/node_modules", "**/*-lock.json", "**/dist", ".wrangler"],
+	"plugins": ["https://plugins.dprint.dev/biome-0.6.0.wasm"]
+}

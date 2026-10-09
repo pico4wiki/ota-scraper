@@ -1,95 +1,95 @@
 export type Headsets = "phoenix" | "sparrow" | "neo3" | "merline" /* | "finch2" */;
-export type Variant = 'k' | 'sek' | 'seko';
+export type Variant = "k" | "sek" | "seko";
 
 export const PRODUCT_NAMES_OVERSEAS = {
-	phoenix: 'Phoenix_ovs',
-	sparrow: 'sparrow',
-	neo3: 'Pico_Neo_3',
-	neo3link: 'Pico_Neo_3_Link',
-	merline: 'PICO_G3',
+	phoenix: "Phoenix_ovs",
+	sparrow: "sparrow",
+	neo3: "Pico_Neo_3",
+	neo3link: "Pico_Neo_3_Link",
+	merline: "PICO_G3",
 } as const;
 
 export const PRODUCT_NAMES_CHINA = {
-	phoenix: 'Phoenix',
-	sparrow: 'sparrow',
-	neo3: 'Pico_Neo_3',
-	merline: 'PICO_G3',
+	phoenix: "Phoenix",
+	sparrow: "sparrow",
+	neo3: "Pico_Neo_3",
+	merline: "PICO_G3",
 	// hawk
 	// PICO_G2_4K (Finch2)
 } as const;
 
 // for X-Signature, currently we only use sparrow
 export const SECRET_KEYS_OVERSEAS = {
-	Phoenix_ovs: '223ecf843a8ad96f99ee3f92c54e164f',
-	PICO_G3: '4b6fe3c0e550f9192e8b51af7b99b708',
-	Pico_Neo_3: '50298ef2480372dae9e6cd430009efcd',
-	Pico_Neo_3_Link: '7502f432280c2ac96d4494518cc300c1',
-	sparrow: '73e0123394eb6ce8e09055f6f97c4e17',
+	Phoenix_ovs: "223ecf843a8ad96f99ee3f92c54e164f",
+	PICO_G3: "4b6fe3c0e550f9192e8b51af7b99b708",
+	Pico_Neo_3: "50298ef2480372dae9e6cd430009efcd",
+	Pico_Neo_3_Link: "7502f432280c2ac96d4494518cc300c1",
+	sparrow: "73e0123394eb6ce8e09055f6f97c4e17",
 } as const;
 
 export const SECRET_KEYS_CHINA = {
-	Phoenix: '159f4d7322318a36c1b77837f7568c0c',
-	PICO_G3: 'd22def96977260f2c243fe9888f7c3b8',
-	Pico_Neo_3: '50298ef2480372dae9e6cd430009efcd',
-	Pico_G2_4K: '4009d3356cf795ded9d69833c2735bbb',
-	sparrow: '704e4b99392d8cf6b069467582e5e510',
-	Hawk: '0173e4f8b93af57ead29bf1287261715',
+	Phoenix: "159f4d7322318a36c1b77837f7568c0c",
+	PICO_G3: "d22def96977260f2c243fe9888f7c3b8",
+	Pico_Neo_3: "50298ef2480372dae9e6cd430009efcd",
+	Pico_G2_4K: "4009d3356cf795ded9d69833c2735bbb",
+	sparrow: "704e4b99392d8cf6b069467582e5e510",
+	Hawk: "0173e4f8b93af57ead29bf1287261715",
 } as const;
 
-export type Region = 'china' | 'overseas';
+export type Region = "china" | "overseas";
 
 export const otaPayload = (product: Headsets, region: Region, variant: string) =>
 	JSON.stringify({
 		// they do not check the x-signature access header, nor do they check any of the shite below this matches
 		// you can identify as a PICO 4 Ultra Enterprise and they'll happily throw a phoenix ota at you
 		product: region === "china" ? PRODUCT_NAMES_CHINA[product] : PRODUCT_NAMES_OVERSEAS[product],
-		product_name: 'PICO 4 Ultra Enterprise',
+		product_name: "PICO 4 Ultra Enterprise",
 		//rom_version: "5.7.2-202308222237-RELEASE-user-phoenix-b5653",
-		udid: 'PA81E0DAFH31ABC4G',
-		os_version: '5.7.2',
-		model: 'A81E0',
-		language: 'en',
-		flag: '0', // needsFullPackage
-		did: '', // comes from bytedance's tracking library Tea, unsure of the format
-		country_code: 'GB',
-		channel: '',
-		buildtime: '0',
+		udid: "PA81E0DAFH31ABC4G",
+		os_version: "5.7.2",
+		model: "A81E0",
+		language: "en",
+		flag: "0", // needsFullPackage
+		did: "", // comes from bytedance's tracking library Tea, unsure of the format
+		country_code: "GB",
+		channel: "",
+		buildtime: "0",
 		buildtype: `user_${variant}`,
 		bc_flag: 1,
 		apps: {
-			'com.pvr.version': 200306031,
-			'com.picovr.updatesystem': 200400017,
-			'com.picopui.im': 100004001,
-			'com.pvr.pvrfit': 100105013,
-			'com.picovr.wing.videoplayer': 200300071,
-			'com.pvr.filemanager': 100402023,
-			'com.picovr.picostreamassistant': 901407000,
-			'com.picovr.store': 300900056,
-			'com.pvr.home': 101000010,
-			'com.pvr.lanserver': 100023015,
-			'com.pvr.avatareditor': 100306002,
-			'com.picovr.vrusercenter': 200201024,
-			'com.bytedance.pico.matrix': 500501010,
-			'com.pico.xr.openxr_runtime': 200110136,
+			"com.pvr.version": 200306031,
+			"com.picovr.updatesystem": 200400017,
+			"com.picopui.im": 100004001,
+			"com.pvr.pvrfit": 100105013,
+			"com.picovr.wing.videoplayer": 200300071,
+			"com.pvr.filemanager": 100402023,
+			"com.picovr.picostreamassistant": 901407000,
+			"com.picovr.store": 300900056,
+			"com.pvr.home": 101000010,
+			"com.pvr.lanserver": 100023015,
+			"com.pvr.avatareditor": 100306002,
+			"com.picovr.vrusercenter": 200201024,
+			"com.bytedance.pico.matrix": 500501010,
+			"com.pico.xr.openxr_runtime": 200110136,
 		},
 	});
 
 export async function getSignature(reqBody: string, region: Region) {
-	const bodyHash = new Uint8Array(await crypto.subtle.digest('MD5', new TextEncoder().encode(reqBody))).toHex();
+	const bodyHash = new Uint8Array(await crypto.subtle.digest("MD5", new TextEncoder().encode(reqBody))).toHex();
 
 	const signed = `POST\n\n${bodyHash}\n`;
 
 	const key = await crypto.subtle.importKey(
-		'raw',
+		"raw",
 		new TextEncoder().encode(region === "china" ? SECRET_KEYS_CHINA.sparrow : SECRET_KEYS_OVERSEAS.sparrow),
 		{
-			name: 'HMAC',
-			hash: { name: 'SHA-256' },
+			name: "HMAC",
+			hash: { name: "SHA-256" },
 		},
 		false,
-		['sign', 'verify'],
+		["sign", "verify"],
 	);
 
-	const hmac = new Uint8Array(await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(signed))).toBase64();
+	const hmac = new Uint8Array(await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(signed))).toBase64();
 	return `sparrow:${hmac}`;
 }
