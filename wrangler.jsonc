@@ -12,10 +12,19 @@
 	},
 	"triggers": {
 		"crons": [
-			"* * * * *"
+			// every 30 mins
+			"*/30 * * * *"
 		]
 	},
-	"upload_source_maps": true
+	"upload_source_maps": true,
+	"d1_databases": [
+		{
+			"binding": "otas",
+			"database_name": "otas",
+			"database_id": "f866f544-8e13-43a2-97ce-f984ca1ea194",
+			"remote": true
+		}
+	]
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
