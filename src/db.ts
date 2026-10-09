@@ -1,8 +1,6 @@
 import { format } from "date-fns";
-import { Product } from "./ota";
+import { Product, Region } from "./ota";
 import { tz } from "@date-fns/tz";
-
-type Region = "china" | "overseas";
 
 export function initIfNeeded(env: Env) {
 	// exec only accepts single line inputs, thank you cloudfart

@@ -8,6 +8,7 @@ export const SECRET_KEYS = {
 } as const;
 
 export type Product = keyof typeof SECRET_KEYS;
+export type Region = 'china' | 'overseas';
 
 export const otaPayload = (product: Product) =>
 	JSON.stringify({
