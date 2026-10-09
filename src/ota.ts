@@ -38,7 +38,7 @@ export const SECRET_KEYS_CHINA = {
 
 export type Region = "china" | "overseas";
 
-export const otaPayload = (product: Headsets, region: Region, variant: string) =>
+export const otaPayload = (product: Headsets, region: Region, variant: string, bc_flag: 1 | 2) =>
 	JSON.stringify({
 		// they do not check the x-signature access header, nor do they check any of the shite below this matches
 		// you can identify as a PICO 4 Ultra Enterprise and they'll happily throw a phoenix ota at you
@@ -55,7 +55,7 @@ export const otaPayload = (product: Headsets, region: Region, variant: string) =
 		channel: "",
 		buildtime: "0",
 		buildtype: `user_${variant}`,
-		bc_flag: 1,
+		bc_flag,
 		apps: {
 			"com.pvr.version": 200306031,
 			"com.picovr.updatesystem": 200400017,

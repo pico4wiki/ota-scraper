@@ -21,6 +21,7 @@ export default {
 		await initIfNeeded(env);
 
 		// having issues getting Pico_Neo_3 and Pico_Neo_3_Link to work on global (apparently it works on CN?)
+		for (const bc_flag of [1, 2] as const) {
 		for (const region of ["china", "overseas"] as const) {
 			const headsets =
 				region === "overseas"
@@ -31,8 +32,8 @@ export default {
 							["sparrow", "sek"],
 						] as const)
 					: ([
-							//['phoenix', 'sek'],
-							["phoenix", "seko"],
+							//["phoenix", "sek"],
+							...(bc_flag === 1 ? [["phoenix", "seko"]] as const : []),
 							//['neo3', 'sek'],
 							//['neo3', 'k'],
 							["merline", "sek"],
@@ -40,7 +41,7 @@ export default {
 						] as const);
 
 			for (const [headset, variant] of headsets) {
-				const body = otaPayload(headset, region, variant);
+				const body = otaPayload(headset, region, variant, bc_flag);
 				const sig = await getSignature(body, region);
 
 				const resp = await fetch(
@@ -67,6 +68,6 @@ export default {
 				// check if its new, and if so, push to DB
 				await putFirmwareIfNew(env, headset, variant, resp.data, region);
 			}
-		}
+		}}
 	},
 } satisfies ExportedHandler<Env>;
