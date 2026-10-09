@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { Product, Region } from "./ota";
+import { Headsets, Region, Variant } from "./ota";
 import { tz } from "@date-fns/tz";
 
 export function initIfNeeded(env: Env) {
@@ -14,6 +14,7 @@ export function initIfNeeded(env: Env) {
 			name      TEXT,
 			version   TEXT NOT NULL,
 			buildDate TEXT NOT NULL,
+			variant   TEXT NOT NULL,
 			data      TEXT           -- json lol
 		)
 	`).run();
@@ -21,22 +22,23 @@ export function initIfNeeded(env: Env) {
 
 type DbFirmware = {
 	buildNo: number;
-	product: Product;
+	product: Headsets;
 	region: Region;
 	md5: string;
 	url: string;
 	name?: string;
 	version: string;
 	buildDate: string;
+	variant: Variant;
 	data?: string;
-}
+};
 
-function parseFirmware(product: Product, region: Region, firmware: any): DbFirmware {
+function parseFirmware(product: Headsets, region: Region, variant: Variant, firmware: any): DbFirmware {
 	// this doesn't always match the one in the string
-	const buildDate = format(firmware.package[0].buildtime * 1000, "yyyyMMddHHmm", { in: tz("Asia/Shanghai") });
-	const buildNo = parseInt(firmware.package[0].name?.match(/-b(\d+)-/)?.[1])
+	const buildDate = format(firmware.package[0].buildtime * 1000, 'yyyyMMddHHmm', { in: tz('Asia/Shanghai') });
+	const buildNo = parseInt(firmware.package[0].name?.match(/-b(\d+)-/)?.[1]);
 
-	if (isNaN(buildNo)) throw new Error("cannot parse firmware");
+	if (isNaN(buildNo)) throw new Error('cannot parse firmware');
 
 	return {
 		buildDate,
@@ -47,49 +49,49 @@ function parseFirmware(product: Product, region: Region, firmware: any): DbFirmw
 		url: firmware.package[0].url,
 		name: firmware.package[0].name,
 		version: firmware.package[0].version,
-		data: JSON.stringify(firmware)
+		variant,
+		data: JSON.stringify(firmware),
 	};
 }
 
-export function mostRecentBuild(env: Env, product: Product, region: Region) {
+export function mostRecentBuild(env: Env, product: Headsets, variant: Variant, region: Region) {
 	return env.otas
-		.prepare(`SELECT * FROM otas WHERE product = ? AND region = ? ORDER BY buildNo DESC LIMIT 1`)
-		.bind(product, region)
+		.prepare(`SELECT * FROM otas WHERE product = ? AND region = ? AND variant = ? ORDER BY buildNo DESC LIMIT 1`)
+		.bind(product, region, variant)
 		.first<DbFirmware>();
 }
 
-export function putFirmware(env: Env, product: Product, firmware: any, region: Region = 'overseas') {
-	const parsed = parseFirmware(product, region, firmware);
+export function putFirmware(env: Env, product: Headsets, variant: Variant, firmware: any, region: Region) {
+	const parsed = parseFirmware(product, region, variant, firmware);
 
-	env.otas
-		.prepare(`INSERT INTO otas (buildNo, product, region, md5, url, name, version, buildDate, data) VALUES (?,?,?,?,?,?,?,?,?)`)
-		.bind(parsed.buildNo, parsed.product, parsed.region, parsed.md5, parsed.url, parsed.name, parsed.version, parsed.buildDate, parsed.data)
+	console.log(parsed.name)
+	return env.otas
+		.prepare(`INSERT INTO otas (buildNo, product, region, md5, url, name, version, buildDate, variant, data) VALUES (?,?,?,?,?,?,?,?,?,?)`)
+		.bind(parsed.buildNo, parsed.product, parsed.region, parsed.md5, parsed.url, parsed.name, parsed.version, parsed.buildDate, parsed.variant, parsed.data)
 		.run();
 }
 
-export async function putFirmwareIfNew(env: Env, product: Product, firmware: any, region: Region = 'overseas') {
-	const mostRecent = await mostRecentBuild(env, product, region);
+export async function putFirmwareIfNew(env: Env, product: Headsets, variant: Variant, firmware: any, region: Region) {
+	const mostRecent = await mostRecentBuild(env, product, variant, region);
 
-	const parsed = parseFirmware(product, region, firmware);
+	const parsed = parseFirmware(product, region, variant, firmware);
 
-	if (!mostRecent || mostRecent.buildNo < parsed.buildNo)
-		putFirmware(env, product, firmware, region);
+	if (!mostRecent || mostRecent.buildNo < parsed.buildNo) return putFirmware(env, product, variant, firmware, region);
 }
 
 export async function getOtas(env: Env) {
-	const firmwares: Record<Product, DbFirmware[]> = {
-		Phoenix_ovs: [],
-		PICO_G3: [],
-		Pico_Neo_3: [],
-		Pico_Neo_3_Link: [],
-		sparrow: []
+	const firmwares: Record<Headsets, DbFirmware[]> = {
+		phoenix: [],
+		merline: [],
+		neo3: [],
+		sparrow: [],
 	};
 
 	// fuck performance im sure its fine
 	const all = await env.otas.prepare("SELECT * FROM otas").all<DbFirmware>();
 
 	for (const product in firmwares) {
-		firmwares[product as Product] = all.results.filter(f => f.product === product);
+		firmwares[product as Headsets] = all.results.filter((f) => f.product === product);
 	}
 
 	return firmwares;
