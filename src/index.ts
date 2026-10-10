@@ -14,7 +14,7 @@ export default {
 if (new URL(req.url).pathname === "/ingest") {
 	const sparrow = [
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.15.7",
 			buildNo: 9111,
 			product: "sparrow",
@@ -36,7 +36,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.15.7-202608080434-RELEASE-user-sparrow-b9105-b83b7763a9.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.15.4",
 			buildNo: 8047,
 			product: "sparrow",
@@ -58,7 +58,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.15.4-202601232111-RELEASE-user-sparrow-b8046-d7d0a0c4ae.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.15.2",
 			buildNo: 7980,
 			product: "sparrow",
@@ -80,7 +80,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.14.5-202510311914-RELEASE-user-sparrow-b7559-6dc2ceb8fe.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.14.5",
 			buildNo: 7543,
 			product: "sparrow",
@@ -102,7 +102,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.14.4-202507302218-RELEASE-user-sparrow-b7055-5e50a0f81f.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.14.4",
 			buildNo: 7054,
 			product: "sparrow",
@@ -124,7 +124,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.14.3-202507160037-RELEASE-user-sparrow-b6884-35a7921990.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.3",
 			buildNo: 5468,
 			product: "sparrow",
@@ -146,7 +146,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.3-202503111322-RELEASE-user-sparrow-b5467-a3634f7ce8.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.2",
 			buildNo: 5345,
 			product: "sparrow",
@@ -157,7 +157,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.2-202503041750-RELEASE-user-sparrow-b5345-2bd261adb9.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.0",
 			buildNo: 5142,
 			product: "sparrow",
@@ -168,7 +168,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.0-202502190359-RELEASE-user-sparrow-b5142-d08212057e.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.12.6",
 			buildNo: 4245,
 			product: "sparrow",
@@ -201,7 +201,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.12.0-202410142220-RELEASE-user-sparrow-b3252-71e83ed5c0.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.12.0",
 			buildNo: 3251,
 			product: "sparrow",
@@ -212,7 +212,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.12.0-202410142220-RELEASE-user-sparrow-b3251-b77f9d6307.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.11.1",
 			buildNo: 2636,
 			product: "sparrow",
@@ -236,7 +236,7 @@ if (new URL(req.url).pathname === "/ingest") {
 	] as const;
 	const phoenix = [
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.8",
 			buildNo: 10113,
 			product: "phoenix",
@@ -247,7 +247,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.8-202609031155-RELEASE-user-phoenix-b10113-8e443f50c3.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.8",
 			buildNo: 10102,
 			product: "phoenix",
@@ -258,7 +258,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.8-202609021949-RELEASE-user-phoenix-b10102-5cc013c385.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.7",
 			buildNo: 9666,
 			product: "phoenix",
@@ -269,7 +269,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.7-202510301739-RELEASE-user-phoenix-b9666-26140cfa0d.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.7",
 			buildNo: 9665,
 			product: "phoenix",
@@ -346,7 +346,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.5-202508290024-RELEASE-user-phoenix-b9536-a265297b26.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.3",
 			buildNo: 9480,
 			product: "phoenix",
@@ -357,7 +357,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.3-202507030112-RELEASE-user-phoenix-b9480-6746cfb44c.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.3",
 			buildNo: 9479,
 			product: "phoenix",
@@ -390,7 +390,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.3-202507020958-RELEASE-user-phoenix-b9471-68dd78c7db.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.2",
 			buildNo: 9458,
 			product: "phoenix",
@@ -401,7 +401,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.2-202506120743-RELEASE-user-phoenix-b9458-40cdda249c.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.2",
 			buildNo: 9456,
 			product: "phoenix",
@@ -478,7 +478,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.0-202505140057-RELEASE-user-phoenix-b9369-02ca58377e.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.12.0",
 			buildNo: 9053,
 			product: "phoenix",
@@ -500,7 +500,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.12.0-202412240356-RELEASE-user-phoenix-b9052-9bb67bbbfe.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.12.0",
 			buildNo: 9051,
 			product: "phoenix",
@@ -544,7 +544,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.12.0-202411300021-RELEASE-user-phoenix-b8991-11aac801da.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.11.2",
 			buildNo: 8729,
 			product: "phoenix",
@@ -566,7 +566,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.11.2-202409110154-RELEASE-user-phoenix-b8728-142817eb57.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.11.2",
 			buildNo: 8727,
 			product: "phoenix",
@@ -588,7 +588,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.11.2-202409110014-RELEASE-user-phoenix-b8724-df7554f9e7.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.9",
 			buildNo: 8638,
 			product: "phoenix",
@@ -621,7 +621,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.11.1-202408281328-RELEASE-user-phoenix-b8621-43b247e3d2.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.11.1",
 			buildNo: 8620,
 			product: "phoenix",
@@ -632,7 +632,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.11.1-202408281328-RELEASE-user-phoenix-b8620-54688783a7.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.11.1",
 			buildNo: 8619,
 			product: "phoenix",
@@ -698,7 +698,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.11.0-202407301711-RELEASE-user-phoenix-b8420-3087f8786c.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.8",
 			buildNo: 8266,
 			product: "phoenix",
@@ -720,7 +720,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.8-202406140037-RELEASE-user-phoenix-b8264-65154b9b88.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.2",
 			buildNo: 7710,
 			product: "phoenix",
@@ -742,7 +742,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.2-202403020318-RELEASE-user-phoenix-b7708-5a0fa763a9.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.2",
 			buildNo: 7699,
 			product: "phoenix",
@@ -775,7 +775,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.1-202401171556-RELEASE-user-phoenix-b7505-8ca9312592.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.1",
 			buildNo: 7504,
 			product: "phoenix",
@@ -797,7 +797,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.1-202401171310-RELEASE-user-phoenix-b7503-9741d1c28b.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.1",
 			buildNo: 7502,
 			product: "phoenix",
@@ -808,7 +808,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.1-202401171309-RELEASE-user-phoenix-b7502-2df0deb43f.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.0",
 			buildNo: 7425,
 			product: "phoenix",
@@ -819,7 +819,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.0-202401110404-RELEASE-user-phoenix-b7425-85edfedf03.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.0",
 			buildNo: 7416,
 			product: "phoenix",
@@ -907,7 +907,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.8.2-202310121535-RELEASE-user-phoenix-b6299-a814249094.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.8.2",
 			buildNo: 6298,
 			product: "phoenix",
@@ -929,7 +929,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.8.2-202310121346-RELEASE-user-phoenix-b6296-1d0490fbc5.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.8.2",
 			buildNo: 6292,
 			product: "phoenix",
@@ -951,7 +951,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.8.0-202309201937-RELEASE-user-phoenix-b6077-7bc072e754.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.8.0",
 			buildNo: 6076,
 			product: "phoenix",
@@ -962,7 +962,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.8.0-202309201937-RELEASE-user-phoenix-b6076-56c1e9da71.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.8.0",
 			buildNo: 6075,
 			product: "phoenix",
@@ -1050,7 +1050,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.8.0-202308311959-RELEASE-user-phoenix-b5776-369ee8fba6.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.7.2",
 			buildNo: 5653,
 			product: "phoenix",
@@ -1061,7 +1061,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.7.2-202308222237-RELEASE-user-phoenix-b5653-7220475cd5.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.7.2",
 			buildNo: 5652,
 			product: "phoenix",
@@ -1094,7 +1094,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.7.2-202308222102-RELEASE-user-phoenix-b5650-646a478a27.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.7.1",
 			buildNo: 5296,
 			product: "phoenix",
@@ -1105,7 +1105,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.7.1-202308041842-RELEASE-user-phoenix-b5296-f92724093a.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.7.1",
 			buildNo: 5295,
 			product: "phoenix",
@@ -1182,7 +1182,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.7.0-202307110339-RELEASE-user-phoenix-b4862-398f14ce0a.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.7.0",
 			buildNo: 4695,
 			product: "phoenix",
@@ -1215,7 +1215,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.7.0-202306271629-RELEASE-user-phoenix-b4693-0a32b8e705.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.7.0",
 			buildNo: 4692,
 			product: "phoenix",
@@ -1226,7 +1226,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.7.0-202306271628-RELEASE-user-phoenix-b4692-ca15d7c21c.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.6.1",
 			buildNo: 4346,
 			product: "phoenix",
@@ -1259,7 +1259,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.6.0-202305190627-RELEASE-user-phoenix-b4262-ef635462e7.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.6.0",
 			buildNo: 4261,
 			product: "phoenix",
@@ -1270,7 +1270,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.6.0-202305190440-RELEASE-user-phoenix-b4261-1a0a729e58.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.6.0",
 			buildNo: 4256,
 			product: "phoenix",
@@ -1292,7 +1292,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.6.0-202305190040-RELEASE-user-phoenix-b4252-81463e6b04.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.6.0",
 			buildNo: 4144,
 			product: "phoenix",
@@ -1303,7 +1303,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.6.0-202305101713-RELEASE-user-phoenix-b4144-b5b3de1e6b.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.6.0",
 			buildNo: 4143,
 			product: "phoenix",
@@ -1358,7 +1358,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.6.0-202304240058-RELEASE-user-phoenix-b4031-85fd24f22b.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.6.0",
 			buildNo: 4030,
 			product: "phoenix",
@@ -1369,7 +1369,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.6.0-202304240057-RELEASE-user-phoenix-b4030-5c2f151137.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.6.0",
 			buildNo: 4029,
 			product: "phoenix",
@@ -1380,7 +1380,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.6.0-202304240012-RELEASE-user-phoenix-b4029-989010bca0.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.5.0",
 			buildNo: 3850,
 			product: "phoenix",
@@ -1402,7 +1402,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.5.0-202304070526-RELEASE-user-phoenix-b3849-fa629c69ff.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.5.0",
 			buildNo: 3843,
 			product: "phoenix",
@@ -1424,7 +1424,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.5.0-202303210104-RELEASE-user-phoenix-b3600-4aa67fc5c2.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.5.0",
 			buildNo: 3599,
 			product: "phoenix",
@@ -1446,7 +1446,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.5.0-202303210046-RELEASE-user-phoenix-b3598-75d3c842d2.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.5.0",
 			buildNo: 3597,
 			product: "phoenix",
@@ -1457,7 +1457,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.5.0-202303210013-RELEASE-user-phoenix-b3597-4335638970.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.4.0",
 			buildNo: 3162,
 			product: "phoenix",
@@ -1468,7 +1468,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.4.0-202302171557-RELEASE-user-phoenix-b3162-3d2f0dbe1b.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.4.0",
 			buildNo: 3159,
 			product: "phoenix",
@@ -1523,7 +1523,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.4.0-202302022206-RELEASE-user-phoenix-b2954-230606e2c2.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.3.2",
 			buildNo: 2705,
 			product: "phoenix",
@@ -1534,7 +1534,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.3.2-202301071817-RELEASE-user-phoenix-b2705-0d2c0cb6ec.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.3.2",
 			buildNo: 2704,
 			product: "phoenix",
@@ -1545,7 +1545,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.3.2-202301071642-RELEASE-user-phoenix-b2704-ae2fa5f1b3.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.3.1",
 			buildNo: 2672,
 			product: "phoenix",
@@ -1567,7 +1567,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.3.1-202301051635-RELEASE-user-phoenix-b2669-c435f2dfde.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.3.1",
 			buildNo: 2667,
 			product: "phoenix",
@@ -1589,7 +1589,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.3.0-202212230826-RELEASE-user-phoenix-b2426-ed73804a5e.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.2.7",
 			buildNo: 2122,
 			product: "phoenix",
@@ -1600,7 +1600,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.2.7-202212020445-RELEASE-user-phoenix-b2122-a15f46c085.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.2.7",
 			buildNo: 2119,
 			product: "phoenix",
@@ -1611,7 +1611,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.2.7-202212020323-RELEASE-user-phoenix-b2119-09638d5e07.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.2.2",
 			buildNo: 1937,
 			product: "phoenix",
@@ -1647,7 +1647,7 @@ if (new URL(req.url).pathname === "/ingest") {
 
 	const neo3 = [
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.7.0",
 			buildNo: 3527,
 			product: "neo3",
@@ -1669,7 +1669,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.13.7-202510301728-RELEASE-user-neo3-b5902-ddd6d04448.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.13.3.0",
 			buildNo: 3446,
 			product: "neo3",
@@ -1713,7 +1713,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.12.2-202412240359-RELEASE-user-neo3-b5575-5b33f89d1a.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.12.2.0",
 			buildNo: 3199,
 			product: "neo3",
@@ -1724,7 +1724,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.12.2.0-202412240022-RELEASE-user-neo3-b3199-7b62ef57a2.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.11.3.0",
 			buildNo: 3013,
 			product: "neo3",
@@ -1746,7 +1746,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.11.3-202409110149-RELEASE-user-neo3-b5351-cc3c0a2612.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.11.3.0",
 			buildNo: 3009,
 			product: "neo3",
@@ -1757,7 +1757,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.11.3.0-202409110016-RELEASE-user-neo3-b3009-b26306c648.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.9.0",
 			buildNo: 3006,
 			product: "neo3",
@@ -1790,7 +1790,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.9-202409100309-RELEASE-user-neo3-b5348-bc6e7590ad.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.9.0",
 			buildNo: 3003,
 			product: "neo3",
@@ -1845,7 +1845,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.8-202406140226-RELEASE-user-neo3-b5118-4f884113c0.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.8.0",
 			buildNo: 2785,
 			product: "neo3",
@@ -1856,7 +1856,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.8.0-202406140016-RELEASE-user-neo3-b2785-d4423088ed.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.5.0",
 			buildNo: 2505,
 			product: "neo3",
@@ -1878,7 +1878,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.5-202403020326-RELEASE-user-neo3-b4840-d850aa8e03.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.5.0",
 			buildNo: 2504,
 			product: "neo3",
@@ -1966,7 +1966,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.8.4-202310100743-RELEASE-user-neo3-b4235-757dc94e5d.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.8.4.0",
 			buildNo: 1982,
 			product: "neo3",
@@ -1977,7 +1977,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.8.4.0-202310100638-RELEASE-user-neo3-b1982-6f1bf961f1.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.8.4",
 			buildNo: 1977,
 			product: "neo3",
@@ -2032,7 +2032,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.8.0-202308231557-RELEASE-user-neo3-b4004-d76ffa8022.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.7.5.0",
 			buildNo: 1648,
 			product: "neo3",
@@ -2043,7 +2043,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.7.5.0-202308042231-RELEASE-user-neo3-b1648-424b2c4282.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.7.5.0",
 			buildNo: 1647,
 			product: "neo3",
@@ -2120,7 +2120,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.6.3-202305190333-RELEASE-user-neo3-b3484-31441931eb.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.6.3.0",
 			buildNo: 1248,
 			product: "neo3",
@@ -2197,7 +2197,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.5.2-202303210021-RELEASE-user-neo3-b3186-5df5f0d193.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.4.0.0",
 			buildNo: 897,
 			product: "neo3",
@@ -2241,7 +2241,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.4.2-202302022115-RELEASE-user-neo3-b2878-1b00056c1a.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.3.1.0",
 			buildNo: 756,
 			product: "neo3",
@@ -2263,7 +2263,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.3.4-202301032204-RELEASE-user-neo3-b2760-35084bb960.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "4.8.19",
 			buildNo: 2635,
 			product: "neo3",
@@ -2274,7 +2274,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "4.8.19-202212231111-RELEASE-user-neo3-b2635-08a834cf61.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "4.8.19",
 			buildNo: 2635,
 			product: "neo3",
@@ -2329,7 +2329,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.2.2-202212020144-RELEASE-user-neo3-b2405-e2f0482a98.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "4.8.0",
 			buildNo: 1981,
 			product: "neo3",
@@ -2340,7 +2340,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "SEKSA-pico_rls_neo3-mol-tob-pui-4.8.0-20220622-falconcv3-user-20221017-225305-32g-b1981.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "4.8.0.0",
 			buildNo: 570,
 			product: "neo3",
@@ -2362,7 +2362,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "4.9.3-202209091733-RELEASE-user-neo3-b1759-7384689bc9.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "4.8.15",
 			buildNo: 1582,
 			product: "neo3",
@@ -2373,7 +2373,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "4.8.15-202208221027-RELEASE-user-neo3-b1582-8d6ba97e7c.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "4.6.10.81.10",
 			buildNo: 1415,
 			product: "neo3",
@@ -2384,7 +2384,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "boxcnZQe7nfa79SSu9sxq84H2mb",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "4.6.10.81.10",
 			buildNo: 1404,
 			product: "neo3",
@@ -2395,7 +2395,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "boxcnHzucBfoU9PuT9exp3XYhYU",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "4.7.1.7",
 			buildNo: 370,
 			product: "neo3",
@@ -2406,7 +2406,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "4.7.1.7-202207041053-RELEASE-user-neo3-b370-60ad3df352.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "4.6.3",
 			buildNo: 678,
 			product: "neo3",
@@ -2417,7 +2417,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "update_PicoNeo3_4.6.3-202204010348-RELEASE-user-neo3-b678-1392dddc2b_KSA-B678.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "4.6.3",
 			buildNo: 678,
 			product: "neo3",
@@ -2442,7 +2442,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.9-202409030326-RELEASE-user-merline-b3033-ce9264d5ee.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.9",
 			buildNo: 3032,
 			product: "merline",
@@ -2453,7 +2453,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.9-202409030309-RELEASE-user-merline-b3032-fa4ac2b691.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.8",
 			buildNo: 2764,
 			product: "merline",
@@ -2475,7 +2475,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.9.0-202403020036-RELEASE-user-merline-b2453-22223c6297.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.9.0",
 			buildNo: 2450,
 			product: "merline",
@@ -2497,7 +2497,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.8.0-202310130153-RELEASE-user-merline-b1792-65743a6055.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.8.0",
 			buildNo: 1781,
 			product: "merline",
@@ -2508,7 +2508,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.8.0-202310130013-RELEASE-user-merline-b1781-6e77d97c19.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.7.0",
 			buildNo: 1182,
 			product: "merline",
@@ -2530,7 +2530,7 @@ if (new URL(req.url).pathname === "/ingest") {
 			name: "5.7.0-202307280753-RELEASE-user-merline-b1180-95fdfc40f5.zip",
 		},
 		{
-			region: "global",
+			region: "overseas",
 			version: "5.6.0",
 			buildNo: 807,
 			product: "merline",
@@ -2580,7 +2580,7 @@ if (new URL(req.url).pathname === "/ingest") {
 	async scheduled(event, env, ctx): Promise<void> {
 		await initIfNeeded(env);
 
-		// having issues getting Pico_Neo_3 and Pico_Neo_3_Link to work on global (apparently it works on CN?)
+		// having issues getting Pico_Neo_3 and Pico_Neo_3_Link to work on overseas (apparently it works on CN?)
 		for (const bc_flag of [1, 2] as const) {
 		for (const region of ["china", "overseas"] as const) {
 			const headsets =
